@@ -1,0 +1,78 @@
+<app-panner></app-panner>
+<app-document></app-document>
+<div class="course-card" id="courses">
+  <div class="course_card_container">
+    <div class="course_card" *ngFor="let item of getallcourseData | paginate: { itemsPerPage: 6, currentPage: currentPage }">
+      <div class="course_image">
+        <img src="{{ item.image }}"  [routerLink]="'/Details/' + item.id" >
+      </div>
+      <div class="course_content">
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.description }}</p>
+        <div class="course_rating">
+          <div class="stars_rating">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+        <mat-icon>star_half</mat-icon>
+
+          </div>
+          <div class="rating_content">
+            <p>(182,783)</p>
+          </div>
+        </div>
+        <div class="price">
+          <span class="discounted-price">${{item.price}}</span>
+          <span class="original-price">${{item.oldPrice}}</span>
+        </div>
+        <button (click)="addtocar(item)">
+          <mat-icon> shopping_cart</mat-icon>
+          <p>add to cart</p>
+          </button>
+      </div>
+    </div>
+
+
+
+    <div class="course_card" *ngFor="let items of getallpostcourseData ">
+      <div class="course_image">
+        <img src="{{ items.image }}"  [routerLink]="'/courseDetails/' + items.id" >
+      </div>
+      <div class="course_content">
+        <h1>{{ items.title }}</h1>
+        <p>{{ items.description }}</p>
+        <div class="course_rating">
+          <div class="stars_rating">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+        <mat-icon>star_half</mat-icon>
+
+          </div>
+          <div class="rating_content">
+            <p>(182,783)</p>
+          </div>
+        </div>
+        <div class="price">
+          <span class="discounted-price">${{items.price}}</span>
+          <span class="original-price">${{items.oldPrice}}</span>
+        </div>
+        <button (click)="addtocar(items)">
+          <mat-icon> shopping_cart</mat-icon>
+          <p>add to cart</p>
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+
+<app-about></app-about>
+<app-feature-topics></app-feature-topics>
+<app-trusted></app-trusted>
+<app-review></app-review>

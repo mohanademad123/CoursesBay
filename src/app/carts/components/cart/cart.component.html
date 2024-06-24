@@ -1,0 +1,58 @@
+  <div class="cart_panner">
+    <h1>Cart</h1>
+  </div>
+
+<div class="cart_berant">
+
+   <div class="cart" *ngFor="let item of getData">
+  <div class="cart-image">
+    <img src="{{item.image}}" alt="Course 1">
+  </div>
+  <div class="cart-details">
+    <h3 class="cart-title">{{item.title}}</h3>
+    <p class="cart-description">{{item.description}}</p>
+    <div class="rating">
+      <div class="links_rating">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star_half</mat-icon>
+      </div>
+      <p>(764,823)</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart_prices">
+        <span class="cart-price">${{item.price}}</span>
+        <p class="cart-delprice">${{item.oldPrice}}</p>
+
+      </div>
+      <button class="cart-btn" (click)="deleteitem(item.id)"><mat-icon>delete</mat-icon></button>
+    </div>
+
+  </div>
+</div>
+<div class="total-price">
+  <div class="total_salary">
+    <p>Total Price:</p>
+    <span>${{ TotalPrice | dataTransform}}</span>
+  </div>
+  <button class="checkout-button" *ngIf="!emtpty" (click)="openDialog()">
+    <mat-icon>  shopping_cart_checkout</mat-icon>
+    <p>checkout</p>
+
+
+  </button>
+  <button class="checkout-button" *ngIf="emtpty" routerLink="/course">
+    <mat-icon>  shopping_cart_checkout</mat-icon>
+    <p>go to Courses</p>
+
+
+  </button>
+</div>
+
+
+
+
+</div>
+<!-- https://www.uplabs.com/posts/e-learning-landing-page-91337c0f-e974-439e-a868-77bf3dc52190 -->

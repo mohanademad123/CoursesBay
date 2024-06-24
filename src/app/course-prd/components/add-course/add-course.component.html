@@ -1,0 +1,46 @@
+
+<div class="course-card">
+  <div class="course_card_container">
+    <div class="add_course"(click)="openDialog()">
+      <span>+</span>
+    </div>
+    <div class="course_card" *ngFor="let item of getallcourseData">
+      <div class="course_image">
+        <img src="{{ item.image }}"  [routerLink]="'/courseDetails/' + item.id" >
+      </div>
+      <div class="course_content">
+        <h1>{{ item.title }}</h1>
+        <p>{{ item.description }}</p>
+        <div class="course_rating">
+          <div class="stars_rating">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+        <mat-icon>star_half</mat-icon>
+
+          </div>
+          <div class="rating_content">
+            <p>(182,783)</p>
+          </div>
+        </div>
+        <div class="price">
+          <span class="discounted-price">${{item.price}}</span>
+          <span class="original-price">${{item.oldPrice}}</span>
+        </div>
+        <div class="btn">
+             <button (click)="deleteCouse(item.id)">
+          <mat-icon > delete</mat-icon>
+          <p>Deleted</p>
+          </button>
+          <button class="updata" (click)="UbdateCourse(item)">
+            <mat-icon > upgrade</mat-icon>
+            <p>Updated</p>
+            </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

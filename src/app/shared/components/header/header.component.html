@@ -1,0 +1,61 @@
+<header class="scrolled">
+  <div class="header_container">
+    <div class="image_logo">
+      <img src="../../assets/image/logo_3(1).png" alt="" />
+    </div>
+    <div class="header_links">
+      <ul>
+        <li class="homes">
+          <a routerLink="/course">Home</a>
+        </li>
+        <li class="Pages">
+          <a>Pages</a>
+        </li>
+        <li class="Courses">
+          <div class="drop_dowen">
+            <p>Courses</p>
+            <p>Courses Details</p>
+          </div>
+          <a href="#courses">Courses</a>
+          <mat-icon> arrow_drop_down </mat-icon>
+        </li>
+        <li class="Events">
+          <div class="drop_dowen_Events">
+            <p>Events</p>
+            <p>Events Details</p>
+          </div>
+          <a>Events</a>
+          <mat-icon> arrow_drop_down </mat-icon>
+        </li>
+        <li class="Shop">
+          <div class="drop_dowen_shop">
+            <p>product list 01</p>
+            <p>product list 02</p>
+            <p>cart</p>
+            <p>checkout</p>
+            <p>product Details</p>
+          </div>
+          <a> Shop </a>
+          <mat-icon> arrow_drop_down </mat-icon>
+        </li>
+        <li class="Blog" routerLink="/prices">
+          <a> Blog</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="header_button">
+      <div class="lenght-icon">
+        <p> {{ cartLength }}</p>
+        <mat-icon routerLink="/cart">    menu_book </mat-icon>
+      </div>
+
+      <mat-icon>search</mat-icon>
+      <mat-icon id="menu">menu </mat-icon>
+      <button>
+        <mat-icon>person</mat-icon>
+        <p>login/register</p>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Sign up or Sign In and start learning</h2>
+<mat-icon (click)="close()">close</mat-icon>
+<mat-dialog-content>
+  <mat-tab-group>
+    <mat-tab label="Sign Up">
+      <form class="form-container">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password" id="">
+        <button (click)="welldone()">Sign Up</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Sign In">
+      <form class="form-container">
+      <div class="image">
+        <img src="../../assets/image/user.avif" alt="">
+      </div>
+      <input type="password" name="password" placeholder="Password" id="">
+      <button (click)="welldone()">Sign In</button>
+      <a href="">forget password?</a>
+    </form> </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>

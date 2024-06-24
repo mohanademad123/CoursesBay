@@ -1,0 +1,28 @@
+.Trusted_perant{
+  padding: 5.4rem 15px;
+  .trusted_content{
+    text-align: center;
+    margin-bottom: 20px;
+    h1{
+      font-weight: bold;
+      font-size: 26px;
+    }
+    p{
+     font-size: 17px;
+    }
+  }
+  .Trusted_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .Trusted_image{
+     max-width: 100%;
+     img{
+      width: 80px;
+      height: 80px;
+     }
+    }
+  }
+}
+

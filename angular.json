@@ -30,9 +30,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/sweetalert2/dist/sweetalert2.min.css",
+              "node_modules/ngx-spinner/animations/ball-clip-rotate.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "D:/courses -ecommerce/Courses/node_modules/angular-font-awesome/dist/angular-font-awesome.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,12 +101,22 @@
               "src/assets"
             ],
             "styles": [
+
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "D:/courses -ecommerce/Courses/node_modules/angular-font-awesome/dist/angular-font-awesome.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f6211c6c-8da5-41fb-8945-15a3ca53c8ac"
   }
 }

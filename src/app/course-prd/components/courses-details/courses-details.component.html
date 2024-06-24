@@ -1,0 +1,263 @@
+<section class="Detai_perant">
+  <h1>Product <span>Details</span></h1>
+  <article class="Detail_container">
+    <div class="Detail_image">
+      <img src="{{ couseDetail.image }}" alt="image" />
+    </div>
+    <div class="Detail_text">
+      <h1>{{ couseDetail.title }}</h1>
+      <p>{{ couseDetail.description }}</p>
+
+      <p></p>
+      <div class="Details_rating">
+        <div class="links_rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star_half</mat-icon>
+        </div>
+        <p>(5453,846)</p>
+      </div>
+      <div class="Details_prices">
+        <span>${{ couseDetail.price }}</span>
+        <p>${{ couseDetail.oldPrice }}</p>
+      </div>
+      <div class="footer_details">
+        <span>language: {{ couseDetail.language }}</span>
+        <button (click)="addtocar(couseDetail)">
+          <mat-icon> shopping_cart</mat-icon>
+          <p>add to cart</p>
+        </button>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- start decription -->
+<section class="description_perant">
+  <article class="description_container">
+    <div class="decription_box">
+      <h1>Requirements</h1>
+      <div class="decription_links">
+        <ol start="1">
+          <li>
+            No coding experience is necessary to take this course! I take you
+            from beginner to expert!
+          </li>
+          <li>
+            Any computer and OS will work — Windows, macOS or Linux. We will set
+            up your text editor the course.
+          </li>
+          <li>
+            A basic understanding of HTML and CSS is a plus, but not a must! The
+            course includes an HTML and CSS crash course.
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="decription_box">
+      <h1>Description</h1>
+      <p>
+        "Really, really well made<span style="font-weight: bold"
+          >course. Super in-depth, with great challenges and projects</span
+        >
+        <span style="font-weight: bold"
+          >that will solidify your {{ couseDetail.language }}</span
+        >
+        understanding. I found the lectures were paced perfectly -- Jonas
+        doesn't skip over anything that might be useful to a JS developer" —
+        Carson Bartholomew
+
+        <span style="font-weight: bold">{{ couseDetail.language }}</span> is the
+        most popular programming language in the world. It powers the entire
+        modern web. It provides millions of high-paying jobs all over the world.
+        That's why you want to learn
+        <span style="font-weight: bold">{{ couseDetail.language }}</span> too.
+        And you came to the right place!
+
+        <span style="font-weight: bold">
+          Why is this the right
+          <span style="font-weight: bold">{{ couseDetail.language }}</span>
+          course for you?</span
+        >
+
+        This is the most complete and in-depth
+        <span style="font-weight: bold">{{ couseDetail.language }}</span> course
+        on Udemy (and maybe the entire internet!). It's an all-in-one package
+        that will take you from the very fundamentals of
+        <span style="font-weight: bold">{{ couseDetail.language }}</span
+        >, all the way to building modern and complex applications. You will
+        learn modern
+        <span style="font-weight: bold">{{ couseDetail.language }}</span> from
+        the very beginning, step-by-step. I will guide you through practical and
+        fun code examples, important theory about how
+        <span style="font-weight: bold">{{ couseDetail.language }}</span> works
+        behind the scenes, and beautiful and complete projects. You will become
+        ready to continue learning advanced front-end frameworks like React,
+        Vue, Angular, or Svelte. You will also learn how to think like a
+        developer, how to plan application features, how to architect your code,
+        how to debug code, and a lot of other real-world skills that you will
+        need in your developer job. And unlike other courses, this one actually
+        contains beginner
+        <span style="font-weight: bold">{{ couseDetail.language }}</span> and
+        what they need in order to master it. And with that knowledge, I
+        designed the ideal course curriculum. It's a unique blend of real-world
+        projects, deep explanations, theory lectures, and challenges, that will
+        take you from zero to an expert and confident
+        <span style="font-weight: bold">{{ couseDetail.language }}</span>
+        developer in just a couple of weeks.
+      </p>
+      <ol start="1">
+        <h3>So what exactly is covered in the course?</h3>
+        <li>
+          Build 5 beautiful real-world projects for your portfolio! In these
+          projects, you will learn how to plan and architect your applications
+          using flowcharts and common
+          <span style="font-weight: bold">{{ couseDetail.language }}</span>
+          patterns
+        </li>
+        <li>
+          Master the
+          <span style="font-weight: bold">{{ couseDetail.language }}</span>
+          fundamentals: variables, if/else, operators, boolean logic, functions,
+          arrays, objects, loops, strings, and more
+        </li>
+        <li>
+          Learn modern
+          <span style="font-weight: bold">{{ couseDetail.language }}</span>
+          (ES6+) from the beginning: arrow functions, destructuring, spread
+          operator, default arguments, optional chaining, and more
+        </li>
+        <li>
+          Deep dive into functions: arrow functions, first-class and
+          higher-order functions, bind, and closures.
+        </li>
+        <li>
+          Deep dive into object-oriented programming: prototypal inheritance,
+          constructor functions (ES5), classes (ES6), encapsulation,
+          abstraction, inheritance, and polymorphism. [This is like a small
+          standalone course]
+        </li>
+        <li>
+          Learn modern tools that are used by professional web developers: NPM,
+          Parcel (module bundler), Babel, and ES6 modules
+        </li>
+      </ol>
+    </div>
+    <div class="decription_box">
+      <h1>Who this course is for:</h1>
+      <div class="decription_links">
+        <ol start="1">
+          <li>
+            Take this course if you want to gain a true and deep understanding
+            of {{ couseDetail.language }}
+          </li>
+          <li>
+            Take this course if you have been trying to learn
+            <span style="font-weight: bold">{{ couseDetail.language }}</span>
+            but: 1) still don't really understand {{ couseDetail.language }}, or
+            2) still don't feel confident to code real apps
+          </li>
+          <li>
+            Take this course if you already know {{ couseDetail.language }} and
+            are looking for an advanced course. This course includes expert
+            topics!
+          </li>
+          <li>
+            Take this course if you want to get started with programming:
+            {{ couseDetail.language }} is a great first language!
+          </li>
+        </ol>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- start Featured review -->
+<section class="client_perant">
+  <article class="client_container">
+    <div class="client_box">
+      <div class="client_image">
+        <img src="../../assets/image/person_4.avif" alt="">
+      </div>
+      <div class="client_content">
+        <div class="client_rating">
+          <div class="client_links">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star_half</i>
+            <i class="material-icons">star_border</i>
+          </div>
+          <p>3 months ago</p>
+        </div>
+        <div class="decription_client">
+          <p>The course has been created with a lot of thought and planning. Each topic related to the one before. Rob not only teaches he shows on this course how to google the information needed, which I've been doing and I've learnt a lot from this method of teaching. I've nearly finished the course and I feel very confident to send my CV to potential empolyers. Thanks for an excellent course. Rayaa
+
+          </p>
+          <span>Was this review helpful?</span>
+          <div class="client_report">
+            <mat-icon>thumb_up</mat-icon>
+            <mat-icon class="thumb">thumb_down</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="client_box">
+      <div class="client_image">
+        <img src="../../assets/image/person_1.avif" alt="">
+      </div>
+      <div class="client_content">
+        <div class="client_rating">
+          <div class="client_links">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star_half</i>
+            <i class="material-icons">star_border</i>
+          </div>
+          <p>3 weeks ago</p>
+        </div>
+        <div class="decription_client">
+          <p>The course has been created with a lot of thought and planning. Each topic related to the one before. Rob not only teaches he shows on this course how to google the information needed, which I've been doing and I've learnt a lot from this method of teaching. I've nearly finished the course and I feel very confident to send my CV to potential empolyers. Thanks for an excellent course. Rayaa
+
+          </p>
+          <span>Was this review helpful?</span>
+          <div class="client_report">
+            <mat-icon>thumb_up</mat-icon>
+            <mat-icon class="thumb">thumb_down</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="client_box">
+      <div class="client_image">
+        <img src="../../assets/image/person_2.avif" alt="">
+      </div>
+      <div class="client_content">
+        <div class="client_rating">
+          <div class="client_links">
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star_half</i>
+            <i class="material-icons">star_border</i>
+          </div>
+          <p>3 years ago</p>
+        </div>
+        <div class="decription_client">
+          <p>The course has been created with a lot of thought and planning. Each topic related to the one before. Rob not only teaches he shows on this course how to google the information needed, which I've been doing and I've learnt a lot from this method of teaching. I've nearly finished the course and I feel very confident to send my CV to potential empolyers. Thanks for an excellent course. Rayaa
+
+          </p>
+          <span>Was this review helpful?</span>
+          <div class="client_report">
+            <mat-icon >thumb_up</mat-icon>
+            <mat-icon class="thumb">thumb_down</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
