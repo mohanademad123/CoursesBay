@@ -12,10 +12,6 @@ import { CartsModule } from './carts/carts.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CoreModule } from './core/core.module';
 
-interface NgxSpinnerConfig {
-  type?: string;
-}
-
 @NgModule({
   declarations: [
     AppComponent
