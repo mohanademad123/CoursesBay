@@ -1,0 +1,13 @@
+{
+  "CartsData": [
+    {
+      "image": "../../assets/image/product_course_5.jpeg",
+      "title": "The Complete Web Development Course: Build 15 Projects",
+      "description": "Learn web development technologies including HTML, CSS, JavaScript, jQuery, Bootstrap, PHP, MySQL, and WordPress. Build real-world projects and kickstart your web development career.",
+      "price": 62.5,
+      "oldPrice": 120,
+      "id": 1
+    }
+  ],
+  "CourseData": []
+}
