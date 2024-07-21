@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from 'src/app/shared/components/add-dialog/add-dialog.component';
 import { CourseService } from '../../services/course.service';
 import Swal from 'sweetalert2';
+import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-add-course',
@@ -10,60 +11,75 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-course.component.scss']
 })
 export class AddCourseComponent implements OnInit {
-  getallcourseData:any;
-  constructor(private dialog:MatDialog,private services:CourseService){
+  getallcourseData: any;
 
-  }
+  constructor(private dialog: MatDialog, private services: CourseService) {}
+
   ngOnInit(): void {
-this.getAllcourses()
+    this.getAllcourses();
   }
 
-  welldone(){
-
+  welldone() {
     Swal.fire({
       title: 'Hello!',
-      text: 'delete course successfully',
+      text: 'Delete course successfully',
       icon: 'success',
     });
+  }
 
-}
   openDialog(): void {
     const dialogRef = this.dialog.open(AddDialogComponent, {
-  width: '750px',
-  // height:'550px'
+      width: '750px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
-      this.getAllcourses()
+      this.getAllcourses();
     });
   }
 
-  getAllcourses(){
-    this.services.getAllCourse().subscribe(ele=>{
-      this.getallcourseData = ele
-    })
+  getAllcourses() {
+    this.services.getAllCourse().subscribe(
+      (ele) => {
+        this.getallcourseData = ele;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
-  deleteCouse(id:number){
-    this.services.deleteCourse(id).subscribe((ele:any)=>{
-      this.welldone()
-      this.getAllcourses()
-    })
+  deleteCouse(id: number) {
+    this.services.deleteCourse(id).pipe(retry(3)).subscribe(
+      (ele: any) => {
+        this.welldone();
+        this.getAllcourses();
+        this.getallcourseData = this.getallcourseData.filter((item: any) => item.id !== id);
+      },
+      (error) => {
+        console.error('Delete course failed after 3 retries', error);
+      }
+    );
   }
 
-  UbdateCourse(item:any){
+  UbdateCourse(item: any): void {
+
+    if(item != null || item != undefined){
+
     const dialogRef = this.dialog.open(AddDialogComponent, {
       width: '750px',
-      data:item
-        });
+      data: item,
+    });
+ dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      const index = this.getallcourseData.findIndex((i: any) => i.id === item.id);
+      if (index !== -1) {
+        this.getallcourseData[index] = result;
+      }
+      this.getAllcourses();
+    });
+    }
 
-        dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
 
-             this.getAllcourses()
-
-
-        });
   }
 }

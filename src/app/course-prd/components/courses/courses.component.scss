@@ -90,9 +90,9 @@
       }
 
       p {
-        font-size: 14px;
-      color: #777777;
-      margin-bottom: 16px;
+        font-size: 15px;
+        padding: 10px 0;
+        color: #6c757d;
       }
 
       .course_rating {
@@ -102,7 +102,6 @@
         .stars_rating {
           display: flex;
           align-items: center;
-          margin-bottom: 10px;
 
           mat-icon {
             font-size: 20px;

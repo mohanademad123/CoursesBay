@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { CartService } from 'src/app/carts/services/cart.service';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -101,44 +102,46 @@ export class CourseService {
 ];
 
 
+  private URL:string = environment.apiUrl;
+constructor(private http: HttpClient, private service: CartService) { }
 
+getAlldata(): any[] {
+  return this.coursesitem;
+}
 
-  constructor(private http:HttpClient,private service:CartService) { }
+getprdId(id: number) {
+  return this.coursesitem.find((item) => item.id == id);
+}
 
+postdata(item: any) {
+  return this.http.post(`${this.URL}/CartsData`, item).pipe(
+    tap(() => {
+      this.service.updateCartLength();
+    })
+  );
+}
 
+postCourse(item: any) {
+  return this.http.post(`${this.URL}/CourseData`, item);
+}
 
-  getAlldata(): any[] {
-    return this.coursesitem;
-  }
+UpdataCourse(item: any, id: number):Observable<any> {
+  return this.http.put<any>(`${this.URL}/CourseData/${id}`, item);
+}
 
-  getprdId(id: number) {
-    return this.coursesitem.find((item) => item.id == id);
-  }
+getAllCourse():Observable<void> {
+  return this.http.get<void>(`${this.URL}/CourseData`);
+}
 
-  postdata(item:any){
-    return this.http.post('http://localhost:3000/CartsData',item).pipe(
-      tap(() => {
-       this.service.updateCartLength();
-      })
-    );
-  }
-  postCourse(item:any){
-    return this.http.post('http://localhost:3000/CourseData',item)
-  }
+getAllCourseId(id: number):Observable<void> {
+  return this.http.get<void>(`${this.URL}/CourseData/${id}`);
+}
 
-  UpdataCourse(item:any,id:number){
-    return this.http.put('http://localhost:3000/CourseData/' + id,item)
-  }
-  getAllCourse(){
-    return this.http.get('http://localhost:3000/CourseData')
-  }
-  getAllCourseId(id:number){
-    return this.http.get('http://localhost:3000/CourseData/' + id)
-  }
-  deleteCourse(id:number){
-    return this.http.delete('http://localhost:3000/CourseData/'+ id)
-  }
-  getDataFromStoage(){
-    return this.http.get('http://localhost:3000/CartsData')
-  }
+deleteCourse(id: number):Observable<void> {
+  return this.http.delete<void>(`${this.URL}/CourseData/${id}`);
+}
+
+getDataFromStoage():Observable<void> {
+  return this.http.get<void>(`${this.URL}/CartsData`);
+}
 }

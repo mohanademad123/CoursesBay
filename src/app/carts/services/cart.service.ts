@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  private URL:string = environment.apiUrl;
   private cartItems = new BehaviorSubject<any[]>([]);
   cartItems$ = this.cartItems.asObservable();
 
@@ -21,13 +23,13 @@ export class CartService {
   }
 
   getdataCourse() {
-    return this.http.get<any[]>('http://localhost:3000/CartsData').pipe(
+    return this.http.get<any[]>(`${this.URL}/CartsData`).pipe(
       tap(items => this.cartItems.next(items))
     );
   }
 
   deleteCartitem(item: number) {
-    return this.http.delete('http://localhost:3000/CartsData/' + item).pipe(
+    return this.http.delete(`${this.URL}/CartsData/` + item).pipe(
       tap(() => {
         const currentItems = this.cartItems.value.filter(i => i.id !== item);
         this.cartItems.next(currentItems);
